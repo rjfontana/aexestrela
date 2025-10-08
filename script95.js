@@ -237,6 +237,11 @@ document.addEventListener('DOMContentLoaded', function() {
     };
   }
 
+  // Botão Consultar SIMBAD
+  document.getElementById('btn-consultar').onclick = function() {
+    window.open('https://simbad.u-strasbg.fr/simbad/sim-fid', '_blank');
+  };
+
   // Gera HTML da pasta Observações para download dos arquivos
   function gerarHtml(pasta, rel_path = "") {
     let html = "<ul>";
@@ -298,4 +303,9 @@ document.addEventListener('DOMContentLoaded', function() {
     </html>
   `);
   winObs.document.close();
+
+  // Atalhos da área de trabalho
+  document.getElementById('icon-observacoes').onclick = function() {
+    window.open('https://drive.google.com/drive/folders/1Ez3YvUGNkTIeaO_KZ8BP_OmBjuZDdG9p?usp=sharing', '_blank');
+  };
 });
