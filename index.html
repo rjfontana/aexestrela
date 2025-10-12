@@ -21,274 +21,60 @@
     </div>
     <div class="window-body">
       <div class="window-body-inner">
-        <!-- Conteúdo do buscador aqui -->
         <h1>AEX astronomia</h1>
-        <label for="space-select">Espaço disponível:</label>
-        <select id="space-select">
-          <option value="">-- Escolha um espaço --</option>
-          <option>Sala de aula</option>
-          <option>Laboratório de informática</option>
-          <option>Laboratório maker</option>
-          <option>Biblioteca</option>
-          <option>Pátio</option>
-        </select>
-        <label for="theme-select">Temática curricular:</label>
-        <select id="theme-select">
-          <option value="">-- Escolha uma temática --</option>
-          <option>Matemática</option>
-          <option>Ciências</option>
-          <option>História</option>
-          <option>Geografia</option>
-          <option>Artes</option>
-          <option>Tecnologia</option>
-        </select>
-        <label>Recursos disponíveis:</label>
-        <div class="checkbox-group" id="resource-checkboxes"></div>
-        <h2>Planos sugeridos:</h2>
         <div id="results"><p>Aguardando seleção...</p></div>
       </div>
     </div>
   </div>
 
-  <!-- Janela de envio de atividades por e-mail (inicialmente oculta) -->
-  <div class="window movable" id="email-window" style="margin-top: 160px; left: 220px; top: 160px; position: absolute; display: none; max-width: 600px; min-width: 340px;">
-    <div class="title-bar" id="email-title-bar">
-      <div class="title-bar-text">
-        <img src="https://img.icons8.com/fluency/24/000000/new-post.png" alt="Carta" style="width:18px;height:18px;vertical-align:middle;"> Compartilhe suas atividades
-      </div>
-      <div class="title-bar-controls">
-        <button aria-label="Minimizar" id="email-minimize-btn">_</button>
-        <button aria-label="Fechar" id="email-close-btn">×</button>
-      </div>
-    </div>
-    <div class="window-body">
-      <div class="window-body-inner">
-        <h1>Envie suas práticas didáticas!</h1>
-        <p style="margin-bottom:12px;">Mande imagens de suas atividades para <a href="mailto:seuemail@exemplo.com" style="color:#000080;font-weight:bold;">ronaldonfontana@prof.educacao.sp.gov.br</a><br></p>
-        <div id="carousel-container" class="carousel-container">
-          <button id="carousel-prev" class="carousel-btn" aria-label="Anterior">&#9664;</button>
-          <div id="carousel-slides" class="carousel-slides"></div>
-          <button id="carousel-next" class="carousel-btn" aria-label="Próxima">&#9654;</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Janela do bloco de notas Win95 (inicialmente oculta) -->
-  <div class="window movable" id="notepad-window" style="margin-top: 200px; left: 260px; top: 200px; position: absolute; display: none; max-width: 400px; min-width: 260px;">
-    <div class="title-bar" id="notepad-title-bar">
-      <div class="title-bar-text">
-        <img src="https://img.icons8.com/fluency/24/000000/notepad.png" alt="Bloco de Notas" style="width:18px;height:18px;vertical-align:middle;"> Bloco de Notas
-      </div>
-      <div class="title-bar-controls">
-        <button aria-label="Minimizar" id="notepad-minimize-btn">_</button>
-        <button aria-label="Fechar" id="notepad-close-btn">×</button>
-      </div>
-    </div>
-    <div class="window-body">
-      <div class="window-body-inner">
-        <textarea id="notepad-textarea" style="width:100%;height:120px;resize:vertical;font-family:'MS Sans Serif',Arial,sans-serif;font-size:15px;padding:8px;border:2px inset #b0c4de;background:#fff;">Compartilhe nossa Página</textarea>
-      </div>
-    </div>
-  </div>
-
-  <!-- Janela do navegador Win95 (inicialmente oculta) -->
-  <div class="window movable" id="navegador-window" style="margin-top: 240px; left: 320px; top: 240px; position: absolute; display: none; max-width: 540px; min-width: 320px;">
-    <div class="title-bar" id="navegador-title-bar">
-      <div class="title-bar-text">
-        <img src="https://img.icons8.com/color/24/000000/globe--v2.png" alt="Globo" style="width:18px;height:18px;vertical-align:middle;"> Navegador de Ferramentas Digitais
-      </div>
-      <div class="title-bar-controls">
-        <button aria-label="Minimizar" id="navegador-minimize-btn">_</button>
-        <button aria-label="Fechar" id="navegador-close-btn">×</button>
-      </div>
-    </div>
-    <div class="window-body">
-      <div class="window-body-inner" style="padding: 10px 0 0 0;">
-        <div style="max-height: 420px; overflow-y: auto;">
-          <div style="display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; margin-bottom: 18px;">
-            <!-- Painel de ícones clicáveis -->
-            <div style="background: #eaf2fb; border: 2px solid #b0c4de; border-radius: 12px; padding: 18px 18px 10px 18px; box-shadow: 1px 2px 8px #0002; min-width: 260px; max-width: 420px; margin: 0 auto;">
-              <h3 style="color:#000080; text-align:center; margin-bottom: 10px;">🎓 Gerais para Organização e Planejamento</h3>
-              <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
-                <a href="https://classroom.google.com/" target="_blank" title="Google Sala de Aula"><img src="https://img.icons8.com/color/48/000000/google-classroom.png" alt="Google Sala de Aula"/></a>
-                <a href="https://www.microsoft.com/pt-br/education/products/teams" target="_blank" title="Microsoft Teams"><img src="https://img.icons8.com/color/48/000000/microsoft-teams.png" alt="Teams"/></a>
-                <a href="https://trello.com/" target="_blank" title="Trello"><img src="https://img.icons8.com/color/48/000000/trello.png" alt="Trello"/></a>
-                <a href="https://www.notion.so/" target="_blank" title="Notion"><img src="https://img.icons8.com/color/48/000000/notion.png" alt="Notion"/></a>
-                <a href="https://padlet.com/" target="_blank" title="Padlet"><img src="https://img.icons8.com/color/48/000000/padlet.png" alt="Padlet"/></a>
-              </div>
-              <h3 style="color:#000080; text-align:center; margin:18px 0 10px 0;">🧑‍🏫 Criação de Conteúdo Didático</h3>
-              <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
-                <a href="https://www.canva.com/" target="_blank" title="Canva"><img src="https://img.icons8.com/color/48/000000/canva.png" alt="Canva"/></a>
-                <a href="https://www.genial.ly/" target="_blank" title="Genially"><img src="https://img.icons8.com/color/48/000000/genially.png" alt="Genially"/></a>
-                <a href="https://prezi.com/" target="_blank" title="Prezi"><img src="https://img.icons8.com/color/48/000000/prezi.png" alt="Prezi"/></a>
-                <a href="https://bookcreator.com/" target="_blank" title="Book Creator"><img src="https://img.icons8.com/color/48/000000/book.png" alt="Book Creator"/></a>
-              </div>
-              <h3 style="color:#000080; text-align:center; margin:18px 0 10px 0;">🎥 Aulas em Vídeo e Transmissão</h3>
-              <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
-                <a href="https://www.loom.com/" target="_blank" title="Loom"><img src="https://img.icons8.com/color/48/000000/loom.png" alt="Loom"/></a>
-                <a href="https://obsproject.com/" target="_blank" title="OBS Studio"><img src="https://img.icons8.com/color/48/000000/obs-studio.png" alt="OBS Studio"/></a>
-                <a href="https://www.youtube.com/" target="_blank" title="YouTube"><img src="https://img.icons8.com/color/48/000000/youtube-play.png" alt="YouTube"/></a>
-                <a href="https://edpuzzle.com/" target="_blank" title="Edpuzzle"><img src="https://img.icons8.com/color/48/000000/puzzle.png" alt="Edpuzzle"/></a>
-              </div>
-              <h3 style="color:#000080; text-align:center; margin:18px 0 10px 0;">🧠 Aprendizagem Ativa e Avaliação Formativa</h3>
-              <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
-                <a href="https://kahoot.com/" target="_blank" title="Kahoot!"><img src="https://img.icons8.com/color/48/000000/kahoot.png" alt="Kahoot!"/></a>
-                <a href="https://quizizz.com/" target="_blank" title="Quizizz"><img src="https://img.icons8.com/color/48/000000/quizizz.png" alt="Quizizz"/></a>
-                <a href="https://www.socrative.com/" target="_blank" title="Socrative"><img src="https://img.icons8.com/color/48/000000/socrative.png" alt="Socrative"/></a>
-                <a href="https://www.mentimeter.com/" target="_blank" title="Mentimeter"><img src="https://img.icons8.com/color/48/000000/mentimeter.png" alt="Mentimeter"/></a>
-                <a href="https://get.plickers.com/" target="_blank" title="Plickers"><img src="https://img.icons8.com/color/48/000000/plickers.png" alt="Plickers"/></a>
-              </div>
-              <h3 style="color:#000080; text-align:center; margin:18px 0 10px 0;">🧪 Ciências, Matemática e Programação</h3>
-              <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
-                <a href="https://phet.colorado.edu/" target="_blank" title="PhET Simulações"><img src="https://img.icons8.com/color/48/000000/physics.png" alt="PhET"/></a>
-                <a href="https://www.geogebra.org/" target="_blank" title="GeoGebra"><img src="https://img.icons8.com/color/48/000000/geogebra.png" alt="GeoGebra"/></a>
-                <a href="https://www.desmos.com/" target="_blank" title="Desmos"><img src="https://img.icons8.com/color/48/000000/desmos.png" alt="Desmos"/></a>
-                <a href="https://scratch.mit.edu/" target="_blank" title="Scratch"><img src="https://img.icons8.com/color/48/000000/scratch.png" alt="Scratch"/></a>
-                <a href="https://www.tinkercad.com/" target="_blank" title="Tinkercad"><img src="https://img.icons8.com/color/48/000000/tinkercad.png" alt="Tinkercad"/></a>
-              </div>
-              <h3 style="color:#000080; text-align:center; margin:18px 0 10px 0;">📚 Leitura, Escrita e Idiomas</h3>
-              <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
-                <a href="https://storybird.com/" target="_blank" title="Storybird"><img src="https://img.icons8.com/color/48/000000/storybird.png" alt="Storybird"/></a>
-                <a href="https://flip.com/" target="_blank" title="Flip (Flipgrid)"><img src="https://img.icons8.com/color/48/000000/flipgrid.png" alt="Flipgrid"/></a>
-                <a href="https://www.kialo-edu.com/" target="_blank" title="Kialo Edu"><img src="https://img.icons8.com/color/48/000000/kialo.png" alt="Kialo Edu"/></a>
-                <a href="https://lyricstraining.com/" target="_blank" title="LyricsTraining"><img src="https://img.icons8.com/color/48/000000/lyrics.png" alt="LyricsTraining"/></a>
-                <a href="https://rewordify.com/" target="_blank" title="Rewordify"><img src="https://img.icons8.com/color/48/000000/rewordify.png" alt="Rewordify"/></a>
-              </div>
-              <h3 style="color:#000080; text-align:center; margin:18px 0 10px 0;">📊 Análise e Feedback</h3>
-              <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
-                <a href="https://docs.google.com/forms/" target="_blank" title="Google Forms"><img src="https://img.icons8.com/color/48/000000/google-forms.png" alt="Google Forms"/></a>
-                <a href="https://forms.office.com/" target="_blank" title="Microsoft Forms"><img src="https://img.icons8.com/color/48/000000/microsoft-forms.png" alt="Microsoft Forms"/></a>
-                <a href="https://www.formative.com/" target="_blank" title="Formative"><img src="https://img.icons8.com/color/48/000000/formative.png" alt="Formative"/></a>
-                <a href="https://www.classdojo.com/" target="_blank" title="ClassDojo"><img src="https://img.icons8.com/color/48/000000/classdojo.png" alt="ClassDojo"/></a>
-                <a href="https://miro.com/" target="_blank" title="Miro"><img src="https://img.icons8.com/color/48/000000/miro.png" alt="Miro"/></a>
-              </div>
-            </div>
-          </div>
-          <div style="text-align:center; margin-top: 18px;">
-            <span style="font-size: 1.1em; color: #000;"></span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Janela de Recursos -->
-  <div class="window movable" id="recursos-window" style="margin-top: 160px; left: 120px; top: 120px; position: absolute; display: none; max-width: 520px; min-width: 320px;">
-    <div class="title-bar" id="recursos-title-bar">
-      <div class="title-bar-text">
-        <img src="https://img.icons8.com/fluency/24/000000/folder-invoices.png" alt="Pasta" style="width:18px;height:18px;vertical-align:middle;"> Recursos
-      </div>
-      <div class="title-bar-controls">
-        <button aria-label="Minimizar" id="recursos-minimize-btn">_</button>
-        <button aria-label="Fechar" id="recursos-close-btn">×</button>
-      </div>
-    </div>
-    <div class="window-body">
-      <div class="window-body-inner" style="padding: 10px 0 0 0;">
-        <div style="display: flex; flex-wrap: wrap; gap: 18px; justify-content: center; margin-bottom: 18px;">
-          <!-- Pasta do Google Drive -->
-          <div style="display: flex; flex-direction: column; align-items: center;">
-            <a href="https://drive.google.com/drive/folders/1QJw6uosW68mvQrcIEhJy-WIwgZdC-rHI?usp=sharing" target="_blank" style="text-decoration:none;">
-              <img src="https://img.icons8.com/fluency/48/000000/google-drive--v2.png" alt="Google Drive"/>
-              <div style="color:#006400;font-weight:bold;font-size:13px;margin-top:2px;">Atividades no Drive</div>
-            </a>
-          </div>
-          <!-- Pasta Taxonomia de Bloom -->
-          <div style="display: flex; flex-direction: column; align-items: center;">
-            <button id="open-bloom-btn" aria-label="Abrir Taxonomia de Bloom" title="Taxonomia de Bloom" style="background:none;border:none;cursor:pointer;outline:none;">
-              <img src="https://img.icons8.com/fluency/48/000000/folder-invoices.png" alt="Taxonomia de Bloom"/>
-              <div style="color:#003366;font-size:13px;margin-top:2px;font-weight:bold;">Taxonomia de Bloom</div>
-            </button>
-          </div>
-          <!-- Pastas ilustrativas -->
-          <div style="display: flex; flex-direction: column; align-items: center;">
-            <img src="https://img.icons8.com/fluency/48/000000/folder-invoices.png" alt="Pasta Fictícia"/>
-            <div style="color:#003366;font-size:13px;margin-top:2px;">Experimentos</div>
-          </div>
-          <div style="display: flex; flex-direction: column; align-items: center;">
-            <img src="https://img.icons8.com/fluency/48/000000/folder-invoices.png" alt="Pasta Fictícia"/>
-            <div style="color:#003366;font-size:13px;margin-top:2px;">Projetos Maker</div>
-          </div>
-          <div style="display: flex; flex-direction: column; align-items: center;">
-            <img src="https://img.icons8.com/fluency/48/000000/folder-invoices.png" alt="Pasta Fictícia"/>
-            <div style="color:#003366;font-size:13px;margin-top:2px;">Jogos Educativos</div>
-          </div>
-          <div style="display: flex; flex-direction: column; align-items: center;">
-            <img src="https://img.icons8.com/fluency/48/000000/folder-invoices.png" alt="Pasta Fictícia"/>
-            <div style="color:#003366;font-size:13px;margin-top:2px;">Outros Recursos</div>
-          </div>
-        </div>
-        <div style="text-align:center; margin-top: 8px;">
-          <span style="font-size: 1.1em; color: #006400; font-weight:bold;">Clique na pasta do Google Drive para acessar as atividades reais.<br>As demais são ilustrativas.<br>Explore também a Taxonomia de Bloom!</span>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Janela Taxonomia de Bloom (inicialmente oculta) -->
-  <div class="window movable" id="bloom-window" style="margin-top: 200px; left: 180px; top: 180px; position: absolute; display: none; max-width: 680px; min-width: 340px;">
-    <div class="title-bar" id="bloom-title-bar">
-      <div class="title-bar-text">
-        <img src="https://img.icons8.com/fluency/24/000000/folder-invoices.png" alt="Pasta" style="width:18px;height:18px;vertical-align:middle;"> Taxonomia de Bloom
-      </div>
-      <div class="title-bar-controls">
-        <button aria-label="Minimizar" id="bloom-minimize-btn">_</button>
-        <button aria-label="Fechar" id="bloom-close-btn">×</button>
-      </div>
-    </div>
-    <div class="window-body">
-      <div class="window-body-inner" id="bloom-content" style="padding: 10px 0 0 0; max-height: 420px; overflow-y: auto;">
-        <!-- Conteúdo dinâmico da taxonomia será inserido via JS -->
-      </div>
-    </div>
-  </div>
-
-  <!-- Janela do Jogo Prof Ronaldo (inicialmente oculta) -->
-  <div class="window movable" id="jogo-window" style="margin-top: 180px; left: 320px; top: 180px; position: absolute; display: none; max-width: 800px; min-width: 340px;">
-    <div class="title-bar" id="jogo-title-bar">
-      <div class="title-bar-text">
-        <img src="https://img.icons8.com/color/24/000000/controller.png" alt="Controle" style="width:18px;height:18px;vertical-align:middle;"> Jogo Prof Ronaldo
-      </div>
-      <div class="title-bar-controls">
-        <button aria-label="Minimizar" id="jogo-minimize-btn">_</button>
-        <button aria-label="Fechar" id="jogo-close-btn">×</button>
-      </div>
-    </div>
-    <div class="window-body">
-      <div class="window-body-inner" style="display: flex; flex-direction: column; align-items: center; gap: 12px;">
-        <h2 style="color:#003366;">Space Invaders - Prof Ronaldo</h2>
-        <div style="margin-bottom:8px;">
-          <label for="jogo-avatar-upload" style="font-size:14px;">Envie seu avatar para aparecer no jogo:</label>
-          <input type="file" id="jogo-avatar-upload" accept="image/*" style="margin-left:8px;">
-          <span id="jogo-avatar-preview" style="margin-left:12px;"></span>
-        </div>
-        <iframe id="jogo-iframe" src="Jogo%20prof%20ronaldo/index.html" title="Jogo Prof Ronaldo" style="width: 700px; height: 540px; border: 2px inset #b0c4de; background: #000; border-radius: 8px;" allowfullscreen loading="lazy"></iframe>
-        <div style="font-size:13px;color:#003366;margin-top:6px;">Atire Livros enquanto eles atiram celulares</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Ícone de pasta Observações na área de trabalho virtual -->
-  <div class="desktop-icons left-corner" style="position:fixed;top:120px;left:40px;z-index:100;">
-    <div class="icon desktop-shortcut" style="display:flex;flex-direction:column;align-items:center;cursor:pointer;" id="icon-observacoes" tabindex="0" title="Observações">
+  <!-- Área de trabalho com ícones em regiões diferentes -->
+  <div class="desktop-icons-area">
+    <!-- Ícone Observações no canto superior esquerdo -->
+    <div class="icon desktop-shortcut" id="icon-observacoes" tabindex="0" title="Observações"
+      style="position:fixed;left:40px;top:80px;z-index:100;display:flex;flex-direction:column;align-items:center;cursor:pointer;">
       <img src="https://img.icons8.com/fluency/48/000000/folder-invoices.png" alt="Pasta Observações" style="width:48px;height:48px;">
       <span style="font-size:13px;color:#003366;margin-top:2px;">Observações</span>
     </div>
+    <!-- Ícone Estrelas no canto superior direito -->
+    <div class="icon desktop-shortcut" id="icon-estrelas" tabindex="0" title="Estrelas"
+      style="position:fixed;right:40px;top:80px;z-index:100;display:flex;flex-direction:column;align-items:center;cursor:pointer;">
+      <img src="https://img.icons8.com/color/48/000000/star--v1.png" alt="Estrela" style="width:48px;height:48px;">
+      <span style="font-size:13px;color:#003366;margin-top:2px;">Estrelas</span>
+    </div>
+    <!-- Ícone Quiz Óptica no canto inferior direito -->
+    <div class="icon desktop-shortcut" id="icon-quiz-optica" tabindex="0" title="Quiz Óptica"
+      style="position:fixed;right:40px;bottom:80px;z-index:100;display:flex;flex-direction:column;align-items:center;cursor:pointer;">
+      <img src="quiz.png" alt="Quiz Óptica" style="width:48px;height:48px;">
+      <span style="font-size:13px;color:#003366;margin-top:2px;">Quiz Óptica</span>
+    </div>
+    <!-- Ícone Formulário no canto inferior esquerdo -->
+    <div class="icon desktop-shortcut" id="icon-formulario" tabindex="0" title="Formulário"
+      style="position:fixed;left:40px;bottom:80px;z-index:100;display:flex;flex-direction:column;align-items:center;cursor:pointer;">
+      <img src="forms.png" alt="Formulário" style="width:48px;height:48px;">
+      <span style="font-size:13px;color:#003366;margin-top:2px;">Formulário</span>
+    </div>
   </div>
-
-  <script>
-  // Ao clicar no ícone Observações, abre o link do Google Drive em nova aba
-  document.getElementById('icon-observacoes').onclick = function() {
-    window.open('https://drive.google.com/drive/folders/1Ez3YvUGNkTIeaO_KZ8BP_OmBjuZDdG9p?usp=sharing', '_blank');
-  };
-  </script>
 
   <!-- Barra de tarefas estilo Win95 -->
   <div class="taskbar">
-    <button class="start-button">
+    <button class="start-button" id="start-btn">
       <img src="retro-computer.avif" alt="Computador Retro" style="width:18px;height:18px;"> Iniciar
     </button>
+    <div id="start-menu" style="display:none;position:fixed;bottom:38px;left:10px;z-index:12001;">
+      <div style="background:#fff;border:2px solid #808080;border-radius:8px;box-shadow:2px 2px 8px #0002;padding:18px 18px 10px 18px;min-width:180px;position:relative;">
+        <div id="argus-helper-menu" style="text-align:center; position:relative; min-height:140px;">
+          <div style="display:inline-block; position:relative; background:#fff; border-radius:12px; padding:8px;">
+            <img id="argus-gif-menu" src="argus.gif" alt="Argus Animado"
+              style="width:140px;height:140px;display:block;position:relative;z-index:2;">
+          </div>
+          <div style="margin-top:8px;">
+            <button id="argus-ajuda-btn" class="win95-btn" style="font-weight:bold; background:#fff; color:#003366; border:1px solid #b0c4de;">
+              Argus
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
     <button id="btn-salsaj" class="win95-btn" style="margin-left:12px;">
       <img src="https://img.icons8.com/color/24/000000/star--v1.png" alt="Salsaj" style="vertical-align:middle;"> Fotometria 
     </button>
@@ -301,10 +87,45 @@
     <button id="btn-consultar" class="win95-btn" style="margin-left:12px;">
       <img src="https://img.icons8.com/color/24/000000/search--v1.png" alt="Consultar" style="vertical-align:middle;"> Consultar
     </button>
+    <button id="btn-game" class="win95-btn" style="margin-left:14px;">
+      <img src="https://img.icons8.com/color/24/000000/controller.png" alt="Game" style="vertical-align:middle;"> Game
+    </button>
     <div class="clock" id="clock"></div>
   </div>
   <img src="Tales_de_Mileto-removebg-preview.png" alt="Tales de Mileto" class="bg-watermark" />
-  <script src="script95.js"></script>
+
+  <!-- Janela Fotometria (Salsaj) -->
+  <div class="window movable" id="recursos-window" style="margin-top: 160px; left: 120px; top: 120px; position: absolute; display: none; max-width: 520px; min-width: 320px;">
+    <div class="title-bar" id="recursos-title-bar">
+      <div class="title-bar-text">
+        <img src="https://img.icons8.com/color/24/000000/star--v1.png" alt="Salsaj" style="width:18px;height:18px;vertical-align:middle;"> Calculadora de Magnitude Relativa
+      </div>
+      <div class="title-bar-controls">
+        <button aria-label="Fechar" id="recursos-close-btn">×</button>
+      </div>
+    </div>
+    <div class="window-body">
+      <div class="window-body-inner" style="padding: 10px;">
+        <h3 style="color:#003366;">Calcule a magnitude relativa da estrela-alvo</h3>
+        <form id="mag-form" style="margin-bottom:12px;">
+          <label for="mag-ref">Magnitude da estrela de referência:</label>
+          <input type="number" step="any" id="mag-ref" required style="width:80px;">
+          <br>
+          <label for="flux-ref">Fluxo da estrela de referência:</label>
+          <input type="number" step="any" id="flux-ref" required style="width:80px;">
+          <br>
+          <label for="flux-alvo">Fluxo da estrela-alvo:</label>
+          <input type="number" step="any" id="flux-alvo" required style="width:80px;">
+          <br>
+          <button type="submit" class="win95-btn" style="margin-top:8px;">Calcular</button>
+        </form>
+        <div id="mag-result" style="font-weight:bold;color:#1565c0;"></div>
+        <p style="font-size:13px;color:#003366;margin-top:10px;">
+          Fórmula: <b>m<sub>alvo</sub> = m<sub>ref</sub> - 2,5 × log<sub>10</sub>(f<sub>alvo</sub>/f<sub>ref</sub>)</b>
+        </p>
+      </div>
+    </div>
+  </div>
 
   <!-- Janela Tutorial Salsaj -->
   <div class="window movable" id="tutorial-salsaj-window" style="margin-top: 120px; left: 180px; top: 120px; position: absolute; display: none; max-width: 680px; min-width: 340px;">
@@ -345,7 +166,7 @@
         <img src="historia.png" alt="História" style="max-width:100%;height:auto;border-radius:8px;box-shadow:0 2px 8px #0002;">
         <div style="margin-top:18px;">
           <button id="btn-audio-historia" class="win95-btn" style="font-weight:bold;">
-            <img src="https://img.icons8.com/color/24/000000/speaker.png" style="vertical-align:middle;"> Ligar 
+            <img src="https://img.icons8.com/color/24/000000/speaker.png" style="vertical-align:middle;"> Play 
           </button>
           <audio id="audio-historia" src="audio.wav"></audio>
         </div>
@@ -353,63 +174,255 @@
     </div>
   </div>
 
+  <!-- Janela Consulta SIMBAD -->
+  <div class="window movable" id="consulta-window" style="margin-top: 180px; left: 260px; top: 180px; position: absolute; display: none; max-width: 520px; min-width: 320px;">
+    <div class="title-bar" id="consulta-title-bar">
+      <div class="title-bar-text">
+        <img src="https://img.icons8.com/color/24/000000/search--v1.png" alt="Consultar" style="width:18px;height:18px;vertical-align:middle;"> Consulta SIMBAD
+      </div>
+      <div class="title-bar-controls">
+        <button aria-label="Fechar" id="consulta-close-btn">×</button>
+      </div>
+    </div>
+    <div class="window-body">
+      <div class="window-body-inner" style="padding: 10px;">
+        <h3 style="color:#003366;">Consultar estrelas no SIMBAD</h3>
+        <a href="https://simbad.u-strasbg.fr/simbad/sim-fid" target="_blank" class="lablink-btn">Abrir SIMBAD</a>
+        <p style="margin-top:12px;font-size:13px;color:#003366;">Use o SIMBAD para buscar informações sobre estrelas de referência e alvos para fotometria.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Janela Jogo de Estrelas -->
+  <div id="game-quiz-window" class="window movable" style="display:none;position:fixed;left:50vw;top:10vw;transform:translate(-50%,0);width:350px;max-width:96vw;z-index:7000;">
+    <div class="title-bar">
+      <span class="title-bar-text">
+        <img src="https://img.icons8.com/color/24/000000/controller.png" style="vertical-align:middle;"> Game - Estrela <span id="game-quiz-num">1</span>/5
+      </span>
+      <div class="title-bar-controls">
+        <button aria-label="Fechar" id="game-close-btn">×</button>
+      </div>
+    </div>
+    <div class="window-body" style="text-align:center;">
+      <img id="game-quiz-img" src="svul.png" alt="Estrela" style="max-width:90%;max-height:180px;margin:12px auto 18px auto;display:block;border-radius:10px;box-shadow:0 2px 8px #0002;">
+      <div style="margin-bottom:16px;">De que estrela se trata?</div>
+      <div id="game-quiz-options" style="display:flex;flex-direction:column;gap:10px;">
+        <!-- Opções serão inseridas via JS -->
+      </div>
+      <div id="game-feedback" style="margin-top:18px;font-weight:bold;"></div>
+    </div>
+  </div>
+
   <script>
-  // Botão da barra de tarefas para abrir o Tutorial Salsaj
+  // Observações - abre pasta no Google Drive
+  document.getElementById('icon-observacoes').onclick = function() {
+    window.open('https://drive.google.com/drive/folders/1Ez3YvUGNkTIeaO_KZ8BP_OmBjuZDdG9p?usp=sharing', '_blank');
+  };
+
+  // Estrelas - abre janela interna com imagem estrela.png (janela ocupa altura da área de trabalho até a barra de tarefas)
+  document.getElementById('icon-estrelas').onclick = function() {
+    const img = new window.Image();
+    img.src = 'estrela.png';
+    img.onload = function() {
+      // Calcula altura disponível: altura da janela - altura da barra de tarefas (aprox. 40px)
+      const taskbar = document.querySelector('.taskbar');
+      const taskbarHeight = taskbar ? taskbar.offsetHeight : 40;
+      const availableHeight = window.innerHeight - taskbarHeight - 32; // 16px padding em cima e embaixo
+      const availableWidth = window.innerWidth - 80; // margem lateral
+
+      let w = img.naturalWidth, h = img.naturalHeight;
+      let scale = Math.min(availableWidth / w, availableHeight / h, 1.2); // até 1.2x se for pequena
+      w = Math.round(w * scale);
+      h = Math.round(h * scale);
+
+      const win = document.createElement('div');
+      win.className = 'window movable';
+      win.style.position = 'fixed';
+      win.style.left = '50%';
+      win.style.top = '0';
+      win.style.transform = `translateX(-50%)`;
+      win.style.width = (w + 32) + 'px'; // 16px padding cada lado
+      win.style.height = (h + 56) + 'px'; // 40px title + 16px padding
+      win.style.maxWidth = '98vw';
+      win.style.maxHeight = availableHeight + 40 + 'px';
+      win.style.zIndex = 5000 + Math.floor(Math.random()*1000);
+      win.innerHTML = `
+        <div class="title-bar" style="display:flex;align-items:center;">
+          <img src="https://img.icons8.com/color/24/000000/star--v1.png" alt="Estrela" style="margin-right:8px;">
+          <span style="font-weight:bold;">Estrelas</span>
+          <span style="flex:1"></span>
+          <button aria-label="Fechar" class="estrelas-close-btn" style="margin-left:8px;">×</button>
+        </div>
+        <div class="window-body" style="padding:16px;display:flex;justify-content:center;align-items:center;height:${h}px;">
+          <img src="estrela.png" alt="Estrelas" style="width:${w}px;height:${h}px;max-width:100%;max-height:100%;border-radius:12px;box-shadow:0 2px 12px #0002;">
+        </div>
+      `;
+      document.body.appendChild(win);
+
+      // Fechar janela
+      win.querySelector('.estrelas-close-btn').onclick = function() {
+        win.remove();
+      };
+
+      // Movimentar janela estilo Win95
+      let isDragging = false, offsetX = 0, offsetY = 0;
+      win.querySelector('.title-bar').addEventListener('mousedown', function(e) {
+        if (e.button !== 0) return;
+        isDragging = true;
+        const rect = win.getBoundingClientRect();
+        offsetX = e.clientX - rect.left;
+        offsetY = e.clientY - rect.top;
+        document.body.style.userSelect = 'none';
+        function dragMove(ev) {
+          if (!isDragging) return;
+          win.style.left = (ev.clientX - offsetX) + 'px';
+          win.style.top = (ev.clientY - offsetY) + 'px';
+          win.style.transform = '';
+        }
+        function dragUp() {
+          isDragging = false;
+          document.body.style.userSelect = '';
+          document.removeEventListener('mousemove', dragMove);
+          document.removeEventListener('mouseup', dragUp);
+        }
+        document.addEventListener('mousemove', dragMove);
+        document.addEventListener('mouseup', dragUp);
+      });
+      win.addEventListener('mousedown', () => {
+        win.style.zIndex = 5000 + Math.floor(Math.random()*1000);
+      });
+    };
+  };
+
+  // Quiz Óptica - abre site do quiz de óptica
+  document.getElementById('icon-quiz-optica').onclick = function() {
+    window.open('https://rjfontana.github.io/Telescopio/', '_blank');
+  };
+
+  // Formulário - abre Google Forms
+  document.getElementById('icon-formulario').onclick = function() {
+    window.open('https://forms.gle/BTM21gP8BU8kEWHN9', '_blank');
+  };
+
+  // Botão iniciar abre/fecha menu
+  const startBtn = document.getElementById('start-btn');
+  const startMenu = document.getElementById('start-menu');
+  startBtn.onclick = function() {
+    startMenu.style.display = startMenu.style.display === 'none' ? 'block' : 'none';
+  };
+  document.addEventListener('mousedown', function(e) {
+    if (!startMenu.contains(e.target) && e.target !== startBtn) {
+      startMenu.style.display = 'none';
+    }
+  });
+
+  // Botão de ajuda Argus dentro do menu iniciar
+  document.getElementById('argus-ajuda-btn').onclick = function() {
+    const win = document.createElement('div');
+    win.className = 'window movable';
+    win.style.position = 'fixed';
+    win.style.right = '90px';
+    win.style.bottom = '80px';
+    win.style.minWidth = '320px';
+    win.style.maxWidth = '98vw';
+    win.style.zIndex = 12001;
+    win.innerHTML = `
+      <div class="title-bar">
+        <span class="title-bar-text">
+          <img src="argus.png" alt="Argus" style="width:18px;height:18px;vertical-align:middle;"> Argus
+        </span>
+        <div class="title-bar-controls">
+          <button aria-label="Fechar" class="argus-close-btn">×</button>
+        </div>
+      </div>
+      <div class="window-body">
+        <div class="window-body-inner" style="min-height:120px;">
+          <h3 style="color:#003366;">Vamos colocar o Método Científico em ação! Primeiro, vamos definir uma hipótese: “o brilho das estrelas não varia”. Depois, vamos selecionar estrelas para observar com o Argus, que serão nossas estrelas-alvo. A partir do registro do brilho estelar em diferentes dias de observação, vamos ver como nossos dados se relacionam com a nossa hipótese.<br><br>
+Use o SalsaJ para obter o fluxo das estrelas-alvo e das estrelas de referência (que não pode ser variável)<br>
+Abra o SalsaJ<br>
+Ficheiro > Abrir > Selecionar as observações da estrela-alvo (os arquivos precisam estar nomeados em ordem cronológica)<br>
+Janela > Cascata (para deixar as observações em ordem cronológica, porque o SalsaJ quando abre inverte a ordem)<br>
+Analisar > Fotometria > clica no centro da estrela-alvo na ordem de trás para frente dos arquivos para gerar a linha informação de “intensidade” na janela de Fotometria<br>
+Selecione as linhas da janela Fotometria e cola no Excel/Google Planilhas<br>
+Calcule a magnitude das estrelas-alvo a partir da relação m1 - m2 = - 2,5 log(f1/f2) usando a informação de magnitude da estrela de referência para o filtro escolhido encontrada no Simbad (https://simbad.cds.unistra.fr/simbad/sim-fid ou Aladin)<br>
+Preencha uma tabela contendo a data e a magnitude calculada para as estrelas-alvo.
+          </h3>
+        </div>
+      </div>
+    `;
+    document.body.appendChild(win);
+
+    win.querySelector('.argus-close-btn').onclick = function() {
+      win.remove();
+    };
+
+    // Movimentar janela estilo Win95
+    let isDragging = false, offsetX = 0, offsetY = 0;
+    win.querySelector('.title-bar').addEventListener('mousedown', function(e) {
+      if (e.button !== 0) return;
+      isDragging = true;
+      const rect = win.getBoundingClientRect();
+      offsetX = e.clientX - rect.left;
+      offsetY = e.clientY - rect.top;
+      document.body.style.userSelect = 'none';
+      function dragMove(ev) {
+        if (!isDragging) return;
+        win.style.left = (ev.clientX - offsetX + window.scrollX) + 'px';
+        win.style.top = (ev.clientY - offsetY + window.scrollY) + 'px';
+        win.style.right = '';
+        win.style.bottom = '';
+      }
+      function dragUp() {
+        isDragging = false;
+        document.body.style.userSelect = '';
+        document.removeEventListener('mousemove', dragMove);
+        document.removeEventListener('mouseup', dragUp);
+      }
+      document.addEventListener('mousemove', dragMove);
+      document.addEventListener('mouseup', dragUp);
+    });
+  };
+
+  // Fechar janelas
+  document.getElementById('recursos-close-btn').onclick = function() {
+    document.getElementById('recursos-window').style.display = 'none';
+  };
+  document.getElementById('tutorial-salsaj-close-btn').onclick = function() {
+    document.getElementById('tutorial-salsaj-window').style.display = 'none';
+  };
+  document.getElementById('historia-close-btn').onclick = function() {
+    document.getElementById('historia-window').style.display = 'none';
+  };
+  document.getElementById('consulta-close-btn').onclick = function() {
+    document.getElementById('consulta-window').style.display = 'none';
+  };
+
+  // Botões da barra de tarefas
+  document.getElementById('btn-salsaj').onclick = function() {
+    const win = document.getElementById('recursos-window');
+    win.style.display = 'block';
+    win.style.zIndex = 4000 + Math.floor(Math.random()*1000);
+  };
   document.getElementById('btn-tutorial-salsaj').onclick = function() {
     const win = document.getElementById('tutorial-salsaj-window');
     win.style.display = 'block';
     win.style.zIndex = 4000 + Math.floor(Math.random()*1000);
   };
-
-  // Fechar janela do Tutorial Salsaj
-  document.getElementById('tutorial-salsaj-close-btn').onclick = function() {
-    document.getElementById('tutorial-salsaj-window').style.display = 'none';
-  };
-
-  // Movimentar janela estilo Win95
-  (function() {
-    const win = document.getElementById('tutorial-salsaj-window');
-    const titleBar = document.getElementById('tutorial-salsaj-title-bar');
-    let isDragging = false, offsetX = 0, offsetY = 0;
-    titleBar.addEventListener('mousedown', function(e) {
-      if (e.button !== 0) return;
-      isDragging = true;
-      const rect = win.getBoundingClientRect();
-      offsetX = e.clientX - rect.left;
-      offsetY = e.clientY - rect.top;
-      document.body.style.userSelect = 'none';
-      function dragMove(ev) {
-        if (!isDragging) return;
-        win.style.left = (ev.clientX - offsetX + window.scrollX) + 'px';
-        win.style.top = (ev.clientY - offsetY + window.scrollY) + 'px';
-      }
-      function dragUp() {
-        isDragging = false;
-        document.body.style.userSelect = '';
-        document.removeEventListener('mousemove', dragMove);
-        document.removeEventListener('mouseup', dragUp);
-      }
-      document.addEventListener('mousemove', dragMove);
-      document.addEventListener('mouseup', dragUp);
-    });
-  })();
-
-  // Botão da barra de tarefas para abrir a janela História
   document.getElementById('btn-historia').onclick = function() {
     const win = document.getElementById('historia-window');
     win.style.display = 'block';
     win.style.zIndex = 4000 + Math.floor(Math.random()*1000);
   };
-
-  // Fechar janela História
-  document.getElementById('historia-close-btn').onclick = function() {
-    document.getElementById('historia-window').style.display = 'none';
+  document.getElementById('btn-consultar').onclick = function() {
+    const win = document.getElementById('consulta-window');
+    win.style.display = 'block';
+    win.style.zIndex = 4000 + Math.floor(Math.random()*1000);
   };
 
-  // Movimentar janela estilo Win95 para História
-  (function() {
-    const win = document.getElementById('historia-window');
-    const titleBar = document.getElementById('historia-title-bar');
+  // Torna todas as janelas movíveis
+  function makeMovable(winId, titleBarId) {
+    const win = document.getElementById(winId);
+    const titleBar = document.getElementById(titleBarId);
     let isDragging = false, offsetX = 0, offsetY = 0;
     titleBar.addEventListener('mousedown', function(e) {
       if (e.button !== 0) return;
@@ -422,6 +435,147 @@
         if (!isDragging) return;
         win.style.left = (ev.clientX - offsetX + window.scrollX) + 'px';
         win.style.top = (ev.clientY - offsetY + window.scrollY) + 'px';
+        win.style.right = '';
+        win.style.bottom = '';
+      }
+      function dragUp() {
+        isDragging = false;
+        document.body.style.userSelect = '';
+        document.removeEventListener('mousemove', dragMove);
+        document.removeEventListener('mouseup', dragUp);
+      }
+      document.addEventListener('mousemove', dragMove);
+      document.addEventListener('mouseup', dragUp);
+    });
+  }
+  makeMovable('recursos-window', 'recursos-title-bar');
+  makeMovable('tutorial-salsaj-window', 'tutorial-salsaj-title-bar');
+  makeMovable('historia-window', 'historia-title-bar');
+  makeMovable('consulta-window', 'consulta-title-bar');
+
+  // Calculadora de magnitude relativa
+  document.getElementById('mag-form').onsubmit = function(e) {
+    e.preventDefault();
+    const mRef = parseFloat(document.getElementById('mag-ref').value);
+    const fRef = parseFloat(document.getElementById('flux-ref').value);
+    const fAlvo = parseFloat(document.getElementById('flux-alvo').value);
+    if (isNaN(mRef) || isNaN(fRef) || isNaN(fAlvo) || fRef <= 0 || fAlvo <= 0) {
+      document.getElementById('mag-result').textContent = 'Preencha todos os campos corretamente!';
+      return;
+    }
+    const mAlvo = mRef - 2.5 * Math.log10(fAlvo / fRef);
+    document.getElementById('mag-result').textContent = `Magnitude da estrela-alvo: ${mAlvo.toFixed(3)}`;
+  };
+
+  // Botão para tocar o áudio da janela História
+  document.getElementById('btn-audio-historia').onclick = function() {
+    const audio = document.getElementById('audio-historia');
+    audio.currentTime = 0;
+    audio.play();
+  };
+
+  // Relógio Win95
+  function updateClock() {
+    const clock = document.getElementById('clock');
+    const now = new Date();
+    const h = String(now.getHours()).padStart(2, '0');
+    const m = String(now.getMinutes()).padStart(2, '0');
+    clock.textContent = `${h}:${m}`;
+  }
+  setInterval(updateClock, 1000);
+  updateClock();
+
+  // Jogo de identificar estrelas - HTML + JS
+  const quizData = [
+    { img: 'svul.png', answer: 'SV Vul' },
+    { img: 'aql.png', answer: 'V1496 Aql' },
+    { img: 'sgr.png', answer: 'V5738 Sgr' },
+    { img: 'aq.png', answer: 'V1496 Aql' },
+    { img: 'vu.png', answer: 'SV Vul' }
+  ];
+  const options = ['V5738 Sgr', 'SV Vul', 'V1496 Aql'];
+
+  let current = 0;
+  let score = 0;
+
+  const gameWin = document.getElementById('game-quiz-window');
+  const btnGame = document.getElementById('btn-game');
+
+  function renderQuiz() {
+    if (current >= quizData.length) {
+      gameWin.innerHTML = `
+        <div class="title-bar">
+          <span class="title-bar-text">
+            <img src="https://img.icons8.com/color/24/000000/controller.png" style="vertical-align:middle;"> Game - Resultado
+          </span>
+          <div class="title-bar-controls">
+            <button aria-label="Fechar" id="game-close-btn">×</button>
+          </div>
+        </div>
+        <div class="window-body" style="text-align:center;padding:24px;">
+          <h2>Fim do Jogo!</h2>
+          <p>Você acertou <b>${score}</b> de <b>${quizData.length}</b> estrelas.</p>
+          <button class="win95-btn" id="game-restart-btn">Jogar Novamente</button>
+        </div>
+      `;
+      document.getElementById('game-close-btn').onclick = () => { gameWin.style.display = 'none'; };
+      document.getElementById('game-restart-btn').onclick = () => { current = 0; score = 0; renderQuiz(); };
+      return;
+    }
+    document.getElementById('game-quiz-num').textContent = (current + 1);
+    document.getElementById('game-quiz-img').src = quizData[current].img;
+    document.getElementById('game-quiz-img').alt = quizData[current].answer;
+    document.getElementById('game-feedback').textContent = '';
+    const optionsDiv = document.getElementById('game-quiz-options');
+    optionsDiv.innerHTML = '';
+    options.forEach(opt => {
+      const btn = document.createElement('button');
+      btn.className = 'win95-btn game-opt-btn';
+      btn.style.fontSize = '1em';
+      btn.textContent = opt;
+      btn.onclick = function () {
+        if (opt === quizData[current].answer) {
+          score++;
+          document.getElementById('game-feedback').textContent = 'Correto!';
+          document.getElementById('game-feedback').style.color = '#006400';
+        } else {
+          document.getElementById('game-feedback').textContent = `Errado! Resposta: ${quizData[current].answer}`;
+          document.getElementById('game-feedback').style.color = '#b71c1c';
+        }
+        setTimeout(() => { current++; renderQuiz(); }, 900);
+      };
+      optionsDiv.appendChild(btn);
+    });
+    document.getElementById('game-close-btn').onclick = () => { gameWin.style.display = 'none'; };
+  }
+
+  // Ao clicar no botão Game, abre o quiz
+  if (btnGame) {
+    btnGame.onclick = function () {
+      current = 0;
+      score = 0;
+      gameWin.style.display = 'block';
+      gameWin.style.zIndex = 7000 + Math.floor(Math.random() * 1000);
+      renderQuiz();
+    };
+  }
+
+  // Movimentar janela estilo Win95
+  (function() {
+    let isDragging = false, offsetX = 0, offsetY = 0;
+    const titleBar = gameWin.querySelector('.title-bar');
+    titleBar.addEventListener('mousedown', function(e) {
+      if (e.button !== 0) return;
+      isDragging = true;
+      const rect = gameWin.getBoundingClientRect();
+      offsetX = e.clientX - rect.left;
+      offsetY = e.clientY - rect.top;
+      document.body.style.userSelect = 'none';
+      function dragMove(ev) {
+        if (!isDragging) return;
+        gameWin.style.left = (ev.clientX - offsetX + window.scrollX) + 'px';
+        gameWin.style.top = (ev.clientY - offsetY + window.scrollY) + 'px';
+        gameWin.style.transform = '';
       }
       function dragUp() {
         isDragging = false;
@@ -433,13 +587,6 @@
       document.addEventListener('mouseup', dragUp);
     });
   })();
-
-  // Botão para tocar o áudio
-  document.getElementById('btn-audio-historia').onclick = function() {
-    const audio = document.getElementById('audio-historia');
-    audio.currentTime = 0;
-    audio.play();
-  };
   </script>
 </body>
 </html>
