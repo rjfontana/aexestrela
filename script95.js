@@ -12,6 +12,75 @@ document.addEventListener('DOMContentLoaded', function() {
   setInterval(updateClock, 1000);
   updateClock();
 
+  // Ícone Observações - abre Google Drive
+  const obsIcon = document.getElementById('icon-observacoes');
+  if (obsIcon) {
+    obsIcon.onclick = function() {
+      window.open('https://drive.google.com/drive/folders/1Ez3YvUGNkTIeaO_KZ8BP_OmBjuZDdG9p?usp=sharing', '_blank');
+    };
+  }
+
+  // Ícone Estrelas - abre janela interna com imagem estrela.png
+  const estrelasIcon = document.getElementById('icon-estrelas');
+  if (estrelasIcon) {
+    estrelasIcon.onclick = function() {
+      const win = document.createElement('div');
+      win.className = 'window movable';
+      win.style.position = 'fixed';
+      win.style.left = '80px';
+      win.style.top = '40px';
+      win.style.width = '800px';
+      win.style.height = '600px';
+      win.style.maxWidth = '96vw';
+      win.style.maxHeight = '90vh';
+      win.style.zIndex = 5000 + Math.floor(Math.random()*1000);
+      win.innerHTML = `
+        <div class="title-bar" style="display:flex;align-items:center;">
+          <img src="https://img.icons8.com/color/24/000000/star--v1.png" alt="Estrela" style="margin-right:8px;">
+          <span style="font-weight:bold;">Estrelas</span>
+          <span style="flex:1"></span>
+          <button aria-label="Fechar" class="estrelas-close-btn" style="margin-left:8px;">×</button>
+        </div>
+        <div class="window-body" style="padding:16px;display:flex;justify-content:center;align-items:center;height:calc(100% - 40px);">
+          <img src="estrela.png" alt="Estrelas" style="max-width:100%;max-height:100%;border-radius:12px;box-shadow:0 2px 12px #0002;">
+        </div>
+      `;
+      document.body.appendChild(win);
+
+      // Fechar janela
+      win.querySelector('.estrelas-close-btn').onclick = function() {
+        win.remove();
+      };
+
+      // Movimentar janela estilo Win95
+      let isDragging = false, offsetX = 0, offsetY = 0;
+      win.querySelector('.title-bar').addEventListener('mousedown', function(e) {
+        if (e.button !== 0) return;
+        isDragging = true;
+        const rect = win.getBoundingClientRect();
+        offsetX = e.clientX - rect.left;
+        offsetY = e.clientY - rect.top;
+        document.body.style.userSelect = 'none';
+        function dragMove(ev) {
+          if (!isDragging) return;
+          win.style.left = (ev.clientX - offsetX + window.scrollX) + 'px';
+          win.style.top = (ev.clientY - offsetY + window.scrollY) + 'px';
+        }
+        function dragUp() {
+          isDragging = false;
+          document.body.style.userSelect = '';
+          document.removeEventListener('mousemove', dragMove);
+          document.removeEventListener('mouseup', dragUp);
+        }
+        document.addEventListener('mousemove', dragMove);
+        document.addEventListener('mouseup', dragUp);
+      });
+      win.addEventListener('mousedown', () => {
+        win.style.zIndex = 5000 + Math.floor(Math.random()*1000);
+      });
+    };
+  }
+
   // Botão da barra de tarefas para abrir a calculadora de magnitude
   const magnitudeBtn = document.getElementById('btn-magnitude');
   if (magnitudeBtn) {
@@ -304,8 +373,131 @@ document.addEventListener('DOMContentLoaded', function() {
   `);
   winObs.document.close();
 
-  // Atalhos da área de trabalho
-  document.getElementById('icon-observacoes').onclick = function() {
-    window.open('https://drive.google.com/drive/folders/1Ez3YvUGNkTIeaO_KZ8BP_OmBjuZDdG9p?usp=sharing', '_blank');
-  };
+  // NÃO crie o botão Game dinamicamente! Use o que já está no HTML
+
+  // Jogo de identificar estrelas - NOVA IMPLEMENTAÇÃO
+  const btnGame = document.getElementById('btn-game');
+  if (btnGame) {
+    btnGame.onclick = function () {
+      // Dados do quiz
+      const quizData = [
+        { img: 'svul.png', answer: 'SV Vul' },
+        { img: 'aql.png', answer: 'V1496 Aql' },
+        { img: 'sgr.png', answer: 'V5738 Sgr' },
+        { img: 'aq.png', answer: 'V1496 Aql' },
+        { img: 'vul.png', answer: 'SV Vul' }
+      ];
+      const options = ['V5738 Sgr', 'SV Vul', 'V1496 Aql'];
+
+      let current = 0;
+      let score = 0;
+
+      // Cria janela do jogo (apenas uma por vez)
+      let win = document.getElementById('game-quiz-window');
+      if (win) win.remove();
+
+      win = document.createElement('div');
+      win.id = 'game-quiz-window';
+      win.className = 'window movable';
+      win.style.position = 'fixed';
+      win.style.left = '50vw';
+      win.style.top = '10vw';
+      win.style.transform = 'translate(-50%, 0)';
+      win.style.width = '350px';
+      win.style.maxWidth = '96vw';
+      win.style.zIndex = 7000 + Math.floor(Math.random() * 1000);
+
+      function renderQuiz() {
+        if (current >= quizData.length) {
+          win.innerHTML = `
+            <div class="title-bar">
+              <span class="title-bar-text">
+                <img src="https://img.icons8.com/color/24/000000/controller.png" style="vertical-align:middle;"> Game - Resultado
+              </span>
+              <div class="title-bar-controls">
+                <button aria-label="Fechar" id="game-close-btn">×</button>
+              </div>
+            </div>
+            <div class="window-body" style="text-align:center;padding:24px;">
+              <h2>Fim do Jogo!</h2>
+              <p>Você acertou <b>${score}</b> de <b>${quizData.length}</b> estrelas.</p>
+              <button class="win95-btn" id="game-restart-btn">Jogar Novamente</button>
+            </div>
+          `;
+          win.querySelector('#game-close-btn').onclick = () => win.remove();
+          win.querySelector('#game-restart-btn').onclick = () => {
+            current = 0; score = 0; renderQuiz();
+          };
+          return;
+        }
+        const q = quizData[current];
+        win.innerHTML = `
+          <div class="title-bar">
+            <span class="title-bar-text">
+              <img src="https://img.icons8.com/color/24/000000/controller.png" style="vertical-align:middle;"> Game - Estrela ${current + 1}/${quizData.length}
+            </span>
+            <div class="title-bar-controls">
+              <button aria-label="Fechar" id="game-close-btn">×</button>
+            </div>
+          </div>
+          <div class="window-body" style="text-align:center;">
+            <img src="${q.img}" alt="Estrela" style="max-width:90%;max-height:180px;margin:12px auto 18px auto;display:block;border-radius:10px;box-shadow:0 2px 8px #0002;">
+            <div style="margin-bottom:16px;">De que estrela se trata?</div>
+            <div style="display:flex;flex-direction:column;gap:10px;">
+              ${options.map(opt => `
+                <button class="win95-btn game-opt-btn" data-opt="${opt}" style="font-size:1em;">${opt}</button>
+              `).join('')}
+            </div>
+            <div id="game-feedback" style="margin-top:18px;font-weight:bold;"></div>
+          </div>
+        `;
+        win.querySelector('#game-close-btn').onclick = () => win.remove();
+        win.querySelectorAll('.game-opt-btn').forEach(btn => {
+          btn.onclick = function () {
+            const chosen = this.getAttribute('data-opt');
+            const feedback = win.querySelector('#game-feedback');
+            if (chosen === q.answer) {
+              score++;
+              feedback.textContent = 'Correto!';
+              feedback.style.color = '#006400';
+            } else {
+              feedback.textContent = `Errado! Resposta: ${q.answer}`;
+              feedback.style.color = '#b71c1c';
+            }
+            setTimeout(() => { current++; renderQuiz(); }, 900);
+          };
+        });
+      }
+      renderQuiz();
+      document.body.appendChild(win);
+
+      // Movimentar janela estilo Win95
+      let isDragging = false, offsetX = 0, offsetY = 0;
+      win.querySelector('.title-bar').addEventListener('mousedown', function (e) {
+        if (e.button !== 0) return;
+        isDragging = true;
+        const rect = win.getBoundingClientRect();
+        offsetX = e.clientX - rect.left;
+        offsetY = e.clientY - rect.top;
+        document.body.style.userSelect = 'none';
+        function dragMove(ev) {
+          if (!isDragging) return;
+          win.style.left = (ev.clientX - offsetX + window.scrollX) + 'px';
+          win.style.top = (ev.clientY - offsetY + window.scrollY) + 'px';
+          win.style.transform = '';
+        }
+        function dragUp() {
+          isDragging = false;
+          document.body.style.userSelect = '';
+          document.removeEventListener('mousemove', dragMove);
+          document.removeEventListener('mouseup', dragUp);
+        }
+        document.addEventListener('mousemove', dragMove);
+        document.addEventListener('mouseup', dragUp);
+      });
+      win.addEventListener('mousedown', () => {
+        win.style.zIndex = 7000 + Math.floor(Math.random() * 1000);
+      });
+    };
+  }
 });
